@@ -202,7 +202,7 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
     // MARK: - Private properties
     
     internal weak var collectionViewLayout: FSPagerViewLayout!
-    internal weak var collectionView: FSPagerViewCollectionView!
+    public weak var collectionView: FSPagerViewCollectionView!
     internal weak var contentView: UIView!
     
     internal var timer: Timer?
@@ -210,7 +210,7 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
     internal var numberOfSections: Int = 0
     
     fileprivate var dequeingSection = 0
-    fileprivate var centermostIndexPath: IndexPath {
+    public var centermostIndexPath: IndexPath {
         guard self.numberOfItems > 0, self.collectionView.contentSize != .zero else {
             return IndexPath(item: 0, section: 0)
         }
